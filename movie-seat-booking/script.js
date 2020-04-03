@@ -1,5 +1,6 @@
 /**
  * Element.classList https://developer.mozilla.org/zh-TW/docs/Web/API/Element/classList
+ * Arry like https://dzone.com/articles/js-array-from-an-array-like-object
  */
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
@@ -41,10 +42,7 @@ movieSelect.addEventListener('change', (e) => {
 
 // Listener for click seat
 container.addEventListener('click', (e) => {
-  console.log(e);
-  console.log(e.target);
   const target = e.target;
-  console.log(target.classList);
   if (target.classList.contains('seat') && !target.classList.contains('occupied')) {
     target.classList.toggle('selected');
     // Update UI count
