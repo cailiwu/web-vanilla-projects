@@ -15,6 +15,10 @@ body {
   margin: 0;
   transition: transform 0.3s ease;
 }
+
+body.show-nav {
+  transform: translateX(200px);
+}
 /* navigation css */
 nav {
   background-color: var(--primary-color);
@@ -119,7 +123,7 @@ button:focus {
 
 /* modal css */
 .modal-container {
-  /* display: none; */
+  display: none;
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
@@ -127,6 +131,11 @@ button:focus {
   bottom: 0;
   right: 0;
 }
+
+.modal-container.show-modal {
+  display: block;
+}
+
 .modal {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -138,6 +147,8 @@ button:focus {
   transform:translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -171,4 +182,12 @@ button:focus {
   position: absolute;
   top: 0;
   right: 0;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
